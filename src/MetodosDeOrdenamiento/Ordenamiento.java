@@ -1,7 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/*Metodos de ordenamiento
+- Burbuja
+- Quicksort
+- ShellSort
+- Radix
+*/
 package MetodosDeOrdenamiento;
 
 /**
@@ -9,5 +11,22 @@ package MetodosDeOrdenamiento;
  * @author isidro
  */
 public class Ordenamiento {
+    public Ordenamiento(){
+    }
+    
+    public void Burbuja(long[] vector){
+        
+    }
+    
+    public void Quicksort(long[] vector){
+        
+    }
+    
+    public void Shellsort(long[] vector){
+        
+    }
+    public void Radix(long[] vector){
+        
+    }
     
 }

@@ -1,7 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/* Metodos de busqueda
+- Busqueda secuencial
+- Busqueda binaria
+*/
 package MetodosDeBusqueda;
 
 /**
@@ -9,5 +9,13 @@ package MetodosDeBusqueda;
  * @author isidro
  */
 public class Busqueda {
+    public Busqueda(){}
     
+    public void Secuencial(long[] vector){
+        
+    }
+    
+    public void Binaria(long[] vector){
+        
+    }
 }

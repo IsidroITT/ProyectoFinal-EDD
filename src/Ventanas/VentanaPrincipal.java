@@ -9,12 +9,18 @@ package Ventanas;
  * @author isidro
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+    private long[] arreglo =new long[500000]; 
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+        this.setName("Ventana principal");
+        for (int i = 0; i < arreglo.length; i++) {
+            arreglo[i] = (long) (500000*Math.random());
+        }
     }
 
     /**
