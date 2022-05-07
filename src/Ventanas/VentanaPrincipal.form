@@ -23,13 +23,226 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="62" pref="62" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblBurbuja" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="500" pref="500" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnOrdenarBurbuja" min="-2" pref="184" max="-2" attributes="0"/>
+                                  <Component id="lblQuicksort" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="btnOrdenarQuicksort" min="-2" pref="183" max="-2" attributes="0"/>
+                                  <Component id="lblShellsort" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnOrdenarShellsort" min="-2" pref="183" max="-2" attributes="0"/>
+                                  <Component id="lblRadix" min="-2" pref="173" max="-2" attributes="0"/>
+                                  <Component id="btnOrdenarRadix" min="-2" pref="183" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="50" pref="50" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblTiempoBurbuja" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTiempoQuicksort" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTiempoShellsort" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTiempoRadix" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtBurbuja" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="txtQuicksort" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="txtShellsort" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="txtRadix" min="-2" pref="146" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnLimpiar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jScrollPane1" min="-2" pref="376" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblBurbuja" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btnOrdenarBurbuja" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblQuicksort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="btnOrdenarQuicksort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
+                      <Component id="lblShellsort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="btnOrdenarShellsort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblRadix" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Component id="btnOrdenarRadix" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                      <Component id="lblTiempoBurbuja" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
+                      <Component id="lblTiempoQuicksort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="76" pref="76" max="-2" attributes="0"/>
+                      <Component id="lblTiempoShellsort" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
+                      <Component id="lblTiempoRadix" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="txtBurbuja" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
+                          <Component id="txtQuicksort" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="68" pref="68" max="-2" attributes="0"/>
+                          <Component id="txtShellsort" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="53" pref="53" max="-2" attributes="0"/>
+                          <Component id="txtRadix" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnLimpiar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jScrollPane1" min="-2" pref="467" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblBurbuja">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenamiento Burbuja"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOrdenarBurbuja">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenar burbuja"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarBurbujaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTiempoBurbuja">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo de ordenamiento:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtBurbuja">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblQuicksort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenamiento Quicksort"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOrdenarQuicksort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenar quicksort"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarQuicksortActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTiempoQuicksort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo de ordenamiento:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtQuicksort">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblShellsort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Odernamiento Shellsort"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOrdenarShellsort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenar shellsort"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarShellsortActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTiempoShellsort">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo de ordenamiento:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtShellsort">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRadix">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenamiento Radix"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOrdenarRadix">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ordenar radix"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOrdenarRadixActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTiempoRadix">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo de ordenamiento:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtRadix">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="PaneMostrar">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Arreglo ordenado"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnLimpiar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Limpiar Pane"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpiarActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>

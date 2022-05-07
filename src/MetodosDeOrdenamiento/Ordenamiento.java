@@ -29,40 +29,39 @@ public class Ordenamiento {
         return vector;
     }
 
-    public long[] Quicksort(long[] vector) {
-        return Quicksort(vector, 0, vector.length - 1);
+    public void Quicksort(long[] arreglo) {
+        Quicksort(arreglo, 0, arreglo.length - 1);
     }
 
-    private long[] Quicksort(long[] vector, int izq, int der) {
-        if (izq >= der) {
-            return vector;
-        }
-        int i = izq, d = der;
-        if (izq != der) {
-            int pivote;
-            long aux;
-            pivote = izq;
-            while (izq != der) {
-                while (vector[der] >= vector[pivote] && izq < der) {
-                    der--;
-                }
-                while (vector[izq] < vector[pivote] && izq < der) {
-                    izq++;
-                }
-                if (der != izq) {
-                    aux = vector[der];
-                    vector[der] = vector[izq];
-                    vector[izq] = aux;
-                }
+    private static void Quicksort(long A[], int izq, int der) {
+        long pivote = A[izq]; // tomamos primer elemento como pivote
+        int i = izq;         // i realiza la búsqueda de izquierda a derecha
+        int j = der;         // j realiza la búsqueda de derecha a izquierda
+       long aux;
+
+        while (i < j) {                          // mientras no se crucen las búsquedas                                   
+            while (A[i] <= pivote && i < j) {
+                i++; // busca elemento mayor que pivote
             }
-            if (izq == der) {
-                Quicksort(vector, i, izq - 1);
-                Quicksort(vector, izq + 1, d);
+            while (A[j] > pivote) {
+                j--;           // busca elemento menor que pivote
             }
-        } else {
-            return vector;
+            if (i < j) {                        // si no se han cruzado                      
+                aux = A[i];                      // los intercambia
+                A[i] = A[j];
+                A[j] = aux;
+            }
         }
-        return vector;
+
+        A[izq] = A[j];      // se coloca el pivote en su lugar de forma que tendremos                                    
+        A[j] = pivote;      // los menores a su izquierda y los mayores a su derecha
+
+        if (izq < j - 1) {
+            Quicksort(A, izq, j - 1);          // ordenamos subarray izquierdo
+        }
+        if (j + 1 < der) {
+            Quicksort(A, j + 1, der);          // ordenamos subarray derecho
+        }
     }
 
     public long[] Shellsort(long[] vector) {
