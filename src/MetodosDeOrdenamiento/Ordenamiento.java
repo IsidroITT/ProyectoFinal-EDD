@@ -121,23 +121,4 @@ public class Ordenamiento {
 
         return vector;
     }
-
-    public static void main(String[] args) {
-        long arreglo[] = new long[5000];
-        Ordenamiento hola = new Ordenamiento();
-        for (int i = 0; i < arreglo.length; i++) {
-            arreglo[i] = (long) (5000 * Math.random());
-        }
-
-        System.out.println("--- Arreglo sin ordenar ---");
-        for (int i = 0; i < arreglo.length; i++) {
-            System.out.println("[" + (i + 1) + "] " + arreglo[i]);
-        }
-
-        System.out.println("--- Arreglo ordenado ---");
-        long[] arregloOrdenado = hola.Radix(arreglo);
-        for (int i = 0; i < arreglo.length; i++) {
-            System.out.println("[" + (i + 1) + "] " + arregloOrdenado[i]);
-        }
-    }
 }
