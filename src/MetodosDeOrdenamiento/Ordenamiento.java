@@ -1,8 +1,8 @@
 /*Metodos de ordenamiento
-- Burbuja
-- Quicksort
-- ShellSort
-- Radix
+- Burbuja     -L
+- Quicksort  -L
+- ShellSort   -L
+- Radix         -L
  */
 package MetodosDeOrdenamiento;
 
@@ -12,16 +12,17 @@ package MetodosDeOrdenamiento;
  */
 public class Ordenamiento {
 
-    public Ordenamiento() {}
+    public Ordenamiento() {
+    }
 
     public long[] Burbuja(long[] vector) {
         long aux;
-        for (int i = 0; i < vector.length-1; i++) {
-            for (int j = 0; j < vector.length-1; j++) {
-                if (vector[j]>vector[j+1]) {
+        for (int i = 0; i < vector.length - 1; i++) {
+            for (int j = 0; j < vector.length - 1; j++) {
+                if (vector[j] > vector[j + 1]) {
                     aux = vector[j];
-                    vector[j] = vector[j+1];
-                    vector[j+1] = aux;
+                    vector[j] = vector[j + 1];
+                    vector[j + 1] = aux;
                 }
             }
         }
@@ -64,30 +65,79 @@ public class Ordenamiento {
         return vector;
     }
 
-    public void Shellsort(long[] vector) {
+    public long[] Shellsort(long[] vector) {
+        int salto, i;
+        long aux;
+        boolean cambios;
 
+        for (salto = vector.length / 2; salto != 0; salto /= 2) {
+            cambios = true;
+            while (cambios) {   // Mientras se intercambie algún elemento                                         
+                cambios = false;
+                for (i = salto; i < vector.length; i++) // se da una pasada
+                {
+                    if (vector[i - salto] > vector[i]) {       // y si están desordenados
+                        aux = vector[i];                  // se reordenan
+                        vector[i] = vector[i - salto];
+                        vector[i - salto] = aux;
+                        cambios = true;              // y se marca como cambio.                                   
+                    }
+                }
+            }
+        }
+        return vector;
     }
 
-    public void Radix(long[] vector) {
+    public long[] Radix(long[] vector) {
+        long[][] bucket = new long[10][vector.length];
+        int[] bucketOfElement = new int[10];
+        long max = 0;
+        // Encuentra el elemento más grande en la matriz
+        for (int i = 0; i < vector.length; i++) {
+            if (vector[i] > max) {
+                max = vector[i];
+            }
+        }
+        // Calcula el número de bits del elemento más grande
+        int maxLength = (max + "").length();
+        for (int m = 0, n = 1; m < maxLength; m++, n *= 10) {
+            // Coloca los números en arr en los cubos correspondientes según sus unidades, decenas, centenas, etc.
+            for (int i = 0; i < vector.length; i++) {
+                int digit = (int) (vector[i] / n % 10);
+                // Asignar el valor de arr [i] a la matriz bidimensional en el depósito
+                bucket[digit][bucketOfElement[digit]] = vector[i];
+                bucketOfElement[digit]++;
+            }
+            int index = 0;
+            // Leer los elementos en el depósito y reasignarlos a arr
+            for (int j = 0; j < 10; j++) {
+                for (int k = 0; k < bucketOfElement[j]; k++) {
+                    vector[index] = bucket[j][k];
+                    index++;
+                }
+                bucketOfElement[j] = 0;// Borrar el número de elementos en cada uno
+            }
+        }
 
+        return vector;
     }
 
     public static void main(String[] args) {
-        long arreglo[] = new long[500];
+        long arreglo[] = new long[5000];
         Ordenamiento hola = new Ordenamiento();
         for (int i = 0; i < arreglo.length; i++) {
-            arreglo[i] = (long) (500*Math.random());
+            arreglo[i] = (long) (5000 * Math.random());
         }
-        
+
         System.out.println("--- Arreglo sin ordenar ---");
         for (int i = 0; i < arreglo.length; i++) {
-            System.out.println("["+(i+1)+"] "+arreglo[i]);
+            System.out.println("[" + (i + 1) + "] " + arreglo[i]);
         }
-        
+
         System.out.println("--- Arreglo ordenado ---");
-        long[] arregloOrdenado = hola.Quicksort(arreglo);
+        long[] arregloOrdenado = hola.Radix(arreglo);
         for (int i = 0; i < arreglo.length; i++) {
-            System.out.println("["+(i+1)+"] "+arregloOrdenado[i]);
+            System.out.println("[" + (i + 1) + "] " + arregloOrdenado[i]);
         }
     }
 }
