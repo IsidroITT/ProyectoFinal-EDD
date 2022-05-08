@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblSecuencial" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNumSec" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTimepoSec" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="txtNumSec" min="-2" pref="103" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="btnBusquedaSecuencial" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtTiempoSecuencial" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="lblResultado" min="-2" pref="468" max="-2" attributes="0"/>
+                  <Component id="lblBinaria" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblNumBin" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTiempoBin" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtNumBin" min="-2" pref="103" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <Component id="bntBusquedaBinaria" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtTiempoBin" alignment="0" min="-2" pref="249" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="lblResultadoBin" alignment="0" min="-2" pref="468" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="169" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="468" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="lblSecuencial" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNumSec" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNumSec" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBusquedaSecuencial" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblTimepoSec" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblResultado" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtTiempoSecuencial" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="lblBinaria" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNumBin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNumBin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bntBusquedaBinaria" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblTiempoBin" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblResultadoBin" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="txtTiempoBin" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="429" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="74" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblSecuencial">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Busqueda secuencial"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnBusquedaSecuencial">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBusquedaSecuencialActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextPane" name="PaneArreglo">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="lblNumSec">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Numero busqueda"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNumSec">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblResultado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Resultado busqueda secuencial"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTimepoSec">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo de busqueda:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTiempoSecuencial">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtNumBin">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblResultadoBin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Resultado busqueda binaria"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTiempoBin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo de busqueda:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTiempoBin">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblBinaria">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Busqueda binaria"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="bntBusquedaBinaria">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntBusquedaBinariaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNumBin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Numero busqueda"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

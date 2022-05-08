@@ -11,8 +11,8 @@ import MetodosDeOrdenamiento.Ordenamiento;
  * @author isidro
  */
 public class Busqueda {
-    Ordenamiento BB;
-    int pos;
+    private Ordenamiento BB;
+    public int pos;
     
     public Busqueda(){
         pos = 0;
@@ -20,9 +20,9 @@ public class Busqueda {
     }
     
     public boolean Secuencial(long[] vector, long dato){
-        for (int i = 0; i < vector.length-1; i++) {
+        for (int i = 0; i < vector.length; i++) {
             if(vector[i] == dato){
-                pos = i;
+                pos = i+1;
                 return true;
             }
         }

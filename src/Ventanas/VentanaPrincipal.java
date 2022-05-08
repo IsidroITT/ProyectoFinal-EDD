@@ -4,9 +4,7 @@
  */
 package Ventanas;
 
-import MetodosDeBusqueda.*;
 import MetodosDeOrdenamiento.*;
-import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -15,8 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     private long[] arreglo;
-    Ordenamiento ordenar;
-    Busqueda buscar;
+    private Ordenamiento ordenar;
 
     /**
      * Creates new form VentanaPrincipal
@@ -24,7 +21,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         arreglo = new long[50000];
         ordenar = new Ordenamiento();
-        buscar = new Busqueda();
         for (int i = 0; i < arreglo.length; i++) {
             arreglo[i] = (long) (500000 * Math.random());
         }
