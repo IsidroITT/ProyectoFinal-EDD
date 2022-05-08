@@ -181,7 +181,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
         long fin = System.nanoTime();
 
         long tiempoTotal = fin - inicio;
-        double tiempo = (tiempoTotal / 1e+9) ;
+        double tiempo = (tiempoTotal / 1000000000) ;
         txtTiempoSecuencial.setText(tiempo+ " segundos");
         if (encontrado) {
             lblResultado.setText("Valor encontrado en la posicion "+buscar.pos);
@@ -203,7 +203,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
         long fin = System.nanoTime();
 
         long tiempoTotal = fin - inicio;
-        double tiempo = (tiempoTotal / 1e+9);
+        double tiempo = (tiempoTotal / 1000000000);
         txtTiempoBin.setText( tiempo + " segundos");
         if (encontrado) {
             lblResultadoBin.setText("Valor encontrado en la posicion "+buscar.pos);

@@ -40,7 +40,7 @@ public class Busqueda {
             centro = (primero + ultimo) / 2;
             valorCentro = vectorOrdenado[centro];
             if (dato == valorCentro) {
-                pos = centro;
+                pos = centro+1;
                 return true;
             } else if (dato < valorCentro) {
                 ultimo = centro - 1;
