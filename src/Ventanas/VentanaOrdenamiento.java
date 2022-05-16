@@ -13,23 +13,18 @@ import static javax.swing.JOptionPane.showMessageDialog;
  */
 public class VentanaOrdenamiento extends javax.swing.JFrame {
 
-    private long[] arreglo;
     private Ordenamiento ordenar;
 
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaOrdenamiento() {
-        arreglo = new long[50000];
         ordenar = new Ordenamiento();
-        for (int i = 0; i < arreglo.length; i++) {
-            arreglo[i] = (long) (50000 * Math.random());
-        }
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setTitle("Ventana principal");
-        showMessageDialog(this,"Arreglo creado");
+        showMessageDialog(this, "Arreglo creado");
     }
 
     /**
@@ -59,15 +54,19 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
         txtRadix = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         PaneMostrar = new javax.swing.JTextPane();
-        jLabel1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblBurbuja.setText("Ordenamiento Burbuja");
 
         btnOrdenarBurbuja.setText("Ordenar burbuja");
+        btnOrdenarBurbuja.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrdenarBurbuja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarBurbujaActionPerformed(evt);
@@ -81,6 +80,7 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
         lblQuicksort.setText("Ordenamiento Quicksort");
 
         btnOrdenarQuicksort.setText("Ordenar quicksort");
+        btnOrdenarQuicksort.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrdenarQuicksort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarQuicksortActionPerformed(evt);
@@ -94,6 +94,7 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
         lblShellsort.setText("Odernamiento Shellsort");
 
         btnOrdenarShellsort.setText("Ordenar shellsort");
+        btnOrdenarShellsort.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrdenarShellsort.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarShellsortActionPerformed(evt);
@@ -107,6 +108,7 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
         lblRadix.setText("Ordenamiento Radix");
 
         btnOrdenarRadix.setText("Ordenar radix");
+        btnOrdenarRadix.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrdenarRadix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarRadixActionPerformed(evt);
@@ -121,68 +123,74 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
         PaneMostrar.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(PaneMostrar);
 
-        jLabel1.setText("Arreglo ordenado");
-
-        btnLimpiar.setText("Limpiar Pane");
+        btnLimpiar.setText("Limpiar panel");
+        btnLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarActionPerformed(evt);
             }
         });
 
-        btnVolver.setText("Volver");
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/volver.png"))); // NOI18N
+        btnVolver.setToolTipText(" Volver");
+        btnVolver.setContentAreaFilled(false);
+        btnVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        jLabel2.setText("Arreglo Ordenado");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(btnVolver)
-                .addGap(617, 617, 617)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(lblBurbuja)
-                                .addGap(453, 453, 453))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnOrdenarBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnOrdenarQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblShellsort)
-                                    .addComponent(btnOrdenarShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnOrdenarRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(50, 50, 50)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTiempoBurbuja)
-                                    .addComponent(lblTiempoQuicksort)
-                                    .addComponent(lblTiempoShellsort)
-                                    .addComponent(lblTiempoRadix))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnLimpiar)
-                        .addGap(31, 31, 31)))
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnOrdenarBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblQuicksort, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnOrdenarQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblShellsort)
+                                        .addComponent(btnOrdenarShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnOrdenarRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(50, 50, 50)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblTiempoBurbuja)
+                                        .addComponent(lblTiempoQuicksort)
+                                        .addComponent(lblTiempoShellsort, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblTiempoRadix))
+                                    .addGap(36, 36, 36)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jSeparator1)
+                                .addComponent(jSeparator2)
+                                .addComponent(jSeparator3))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(btnLimpiar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVolver)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,57 +198,73 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(9, 9, 9)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(btnVolver))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addComponent(lblBurbuja)
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnOrdenarBurbuja)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnOrdenarBurbuja)
-                                .addGap(12, 12, 12)
+                                .addGap(4, 4, 4)
+                                .addComponent(lblTiempoBurbuja))
+                            .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblQuicksort)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnOrdenarQuicksort)
-                                .addGap(27, 27, 27)
+                                .addComponent(btnOrdenarQuicksort))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(lblTiempoQuicksort))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblShellsort)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnOrdenarShellsort)
-                                .addGap(12, 12, 12)
+                                .addComponent(btnOrdenarShellsort))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(lblTiempoShellsort))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addComponent(lblRadix)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnOrdenarRadix))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(lblTiempoBurbuja)
-                                .addGap(61, 61, 61)
-                                .addComponent(lblTiempoQuicksort)
-                                .addGap(76, 76, 76)
-                                .addComponent(lblTiempoShellsort)
-                                .addGap(61, 61, 61)
+                                .addGap(63, 63, 63)
                                 .addComponent(lblTiempoRadix))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
-                                .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(68, 68, 68)
-                                .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
+                                .addGap(59, 59, 59)
                                 .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addComponent(btnLimpiar)))
-                .addGap(14, 14, 14))
+                .addGap(38, 38, 38))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOrdenarBurbujaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarBurbujaActionPerformed
-        long[] arregloBurbuja = arreglo;
+        long[] arregloBurbuja = crearArreglo();
 
         long inicio = System.nanoTime();
         long[] nuevoBurbuja = ordenar.Burbuja(arregloBurbuja);
@@ -252,7 +276,7 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrdenarBurbujaActionPerformed
 
     private void btnOrdenarQuicksortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarQuicksortActionPerformed
-        long[] arregloQuick = arreglo;
+        long[] arregloQuick = crearArreglo();
 
         long inicio = System.nanoTime();
         ordenar.Quicksort(arregloQuick);
@@ -264,7 +288,7 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrdenarQuicksortActionPerformed
 
     private void btnOrdenarShellsortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarShellsortActionPerformed
-        long[] arregloShell = arreglo;
+        long[] arregloShell = crearArreglo();
 
         long inicio = System.nanoTime();
         long[] nuevoShell = ordenar.Shellsort(arregloShell);
@@ -276,7 +300,7 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrdenarShellsortActionPerformed
 
     private void btnOrdenarRadixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarRadixActionPerformed
-        long[] arregloRadix = arreglo;
+        long[] arregloRadix = crearArreglo();
 
         long inicio = System.nanoTime();
         long[] nuevoRadix = ordenar.Radix(arregloRadix);
@@ -303,6 +327,14 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
             mostrar += "[" + (i + 1) + "] " + arregloMostrar[i] + "\n";
         }
         PaneMostrar.setText(mostrar);
+    }
+
+    public long[] crearArreglo() {
+        long[] arregloOrdenar = new long[100000];
+        for (int i = 0; i < arregloOrdenar.length; i++) {
+            arregloOrdenar[i] = (long) (100000 * Math.random());
+        }
+        return arregloOrdenar;
     }
 
     /**
@@ -349,8 +381,11 @@ public class VentanaOrdenamiento extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdenarRadix;
     private javax.swing.JButton btnOrdenarShellsort;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel lblBurbuja;
     private javax.swing.JLabel lblQuicksort;
     private javax.swing.JLabel lblRadix;

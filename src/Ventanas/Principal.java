@@ -31,42 +31,57 @@ public class Principal extends javax.swing.JFrame {
 
         btnOrdenamiento = new javax.swing.JButton();
         btnBusqueda = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnOrdenamiento.setText("Ordenamiento");
+        btnOrdenamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ordenar.png"))); // NOI18N
+        btnOrdenamiento.setToolTipText("Ventana ordenamiento");
+        btnOrdenamiento.setContentAreaFilled(false);
+        btnOrdenamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrdenamiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenamientoActionPerformed(evt);
             }
         });
 
-        btnBusqueda.setText("Busqueda");
+        btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/buscar.png"))); // NOI18N
+        btnBusqueda.setToolTipText("Ventana busqueda");
+        btnBusqueda.setContentAreaFilled(false);
+        btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBusquedaActionPerformed(evt);
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        jLabel1.setText("Selector de ventanas");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnOrdenamiento, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                    .addComponent(btnBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addGap(105, 105, 105)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnOrdenamiento)
+                        .addGap(54, 54, 54)
+                        .addComponent(btnBusqueda)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(btnOrdenamiento)
-                .addGap(39, 39, 39)
-                .addComponent(btnBusqueda)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnOrdenamiento)
+                    .addComponent(btnBusqueda))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,5 +137,6 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnOrdenamiento;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
