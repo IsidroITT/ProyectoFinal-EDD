@@ -18,6 +18,8 @@ public class Principal extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setTitle("Ventana principal");
+        btnOrdenamiento.setToolTipText("Ventana ordenamiento");
+        btnBusqueda.setToolTipText("Ventana busqueda");
     }
 
     /**
@@ -31,12 +33,12 @@ public class Principal extends javax.swing.JFrame {
 
         btnOrdenamiento = new javax.swing.JButton();
         btnBusqueda = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblInfo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnOrdenamiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ordenar.png"))); // NOI18N
-        btnOrdenamiento.setToolTipText("Ventana ordenamiento");
+        btnOrdenamiento.setToolTipText("");
         btnOrdenamiento.setContentAreaFilled(false);
         btnOrdenamiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnOrdenamiento.addActionListener(new java.awt.event.ActionListener() {
@@ -46,7 +48,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/buscar.png"))); // NOI18N
-        btnBusqueda.setToolTipText("Ventana busqueda");
+        btnBusqueda.setToolTipText("");
         btnBusqueda.setContentAreaFilled(false);
         btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -55,8 +57,8 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
-        jLabel1.setText("Selector de ventanas");
+        lblInfo.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        lblInfo.setText("Selector de ventanas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -64,20 +66,21 @@ public class Principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(105, 105, 105)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnOrdenamiento)
-                        .addGap(54, 54, 54)
-                        .addComponent(btnBusqueda)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addComponent(btnOrdenamiento)
+                .addGap(54, 54, 54)
+                .addComponent(btnBusqueda)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(113, Short.MAX_VALUE)
+                .addComponent(lblInfo)
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGap(50, 50, 50)
+                .addGap(26, 26, 26)
+                .addComponent(lblInfo)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnOrdenamiento)
                     .addComponent(btnBusqueda))
@@ -137,6 +140,6 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnOrdenamiento;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblInfo;
     // End of variables declaration//GEN-END:variables
 }

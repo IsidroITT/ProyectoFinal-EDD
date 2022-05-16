@@ -214,6 +214,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBusquedaSecuencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaSecuencialActionPerformed
+        if(txtNumSec.getText().isEmpty()) showMessageDialog(this,"NO hay un numero que buscar");
         try {
             long numBusqueda = Integer.parseInt(txtNumSec.getText());
 
@@ -236,6 +237,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBusquedaSecuencialActionPerformed
 
     private void bntBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBusquedaBinariaActionPerformed
+        if(txtNumBin.getText().isEmpty()) showMessageDialog(this,"NO hay un numero que buscar");
         if (!ordenado) {
             busquedaBinaria = ordenar.Shellsort(arreglo);
             mostrarArreglo(busquedaBinaria);
