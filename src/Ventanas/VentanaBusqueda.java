@@ -238,14 +238,13 @@ public class VentanaBusqueda extends javax.swing.JFrame {
 
     private void bntBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBusquedaBinariaActionPerformed
         if(txtNumBin.getText().isEmpty()) showMessageDialog(this,"NO hay un numero que buscar");
-        if (!ordenado) {
-            busquedaBinaria = ordenar.Shellsort(arreglo);
-            mostrarArreglo(busquedaBinaria);
-            ordenado = true;
-        }
         try{
             long numBusqueda = Integer.parseInt(txtNumBin.getText());
-
+            if (!ordenado) {
+                busquedaBinaria = ordenar.Shellsort(arreglo);
+                mostrarArreglo(busquedaBinaria);
+                ordenado = true;
+            }
             long inicio = System.nanoTime();
             boolean encontrado = buscar.Binaria(busquedaBinaria, numBusqueda);
             long fin = System.nanoTime();
