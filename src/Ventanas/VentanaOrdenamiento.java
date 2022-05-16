@@ -5,12 +5,13 @@
 package Ventanas;
 
 import MetodosDeOrdenamiento.*;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
  * @author isidro
  */
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class VentanaOrdenamiento extends javax.swing.JFrame {
 
     private long[] arreglo;
     private Ordenamiento ordenar;
@@ -18,17 +19,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
+    public VentanaOrdenamiento() {
         arreglo = new long[50000];
         ordenar = new Ordenamiento();
         for (int i = 0; i < arreglo.length; i++) {
-            arreglo[i] = (long) (500000 * Math.random());
+            arreglo[i] = (long) (50000 * Math.random());
         }
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setTitle("Ventana principal");
-        System.out.println("Arreglo creado ");
+        showMessageDialog(this,"Arreglo creado");
     }
 
     /**
@@ -60,6 +61,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         PaneMostrar = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         btnLimpiar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +118,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtRadix.setEditable(false);
 
         PaneMostrar.setEditable(false);
+        PaneMostrar.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(PaneMostrar);
 
         jLabel1.setText("Arreglo ordenado");
@@ -127,19 +130,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(18, 18, 18)
+                .addComponent(btnVolver)
+                .addGap(617, 617, 617)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblBurbuja)
-                        .addGap(500, 500, 500)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblBurbuja)
+                                .addGap(453, 453, 453))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnOrdenarBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,57 +175,65 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                     .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(47, 47, 47))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnLimpiar)
-                                .addGap(38, 38, 38)))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnLimpiar)
+                        .addGap(31, 31, 31)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblBurbuja)
-                    .addComponent(jLabel1))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnOrdenarBurbuja)
-                        .addGap(12, 12, 12)
-                        .addComponent(lblQuicksort)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOrdenarQuicksort)
-                        .addGap(27, 27, 27)
-                        .addComponent(lblShellsort)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOrdenarShellsort)
-                        .addGap(12, 12, 12)
-                        .addComponent(lblRadix)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOrdenarRadix))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(btnVolver))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(lblTiempoBurbuja)
-                        .addGap(61, 61, 61)
-                        .addComponent(lblTiempoQuicksort)
-                        .addGap(76, 76, 76)
-                        .addComponent(lblTiempoShellsort)
-                        .addGap(61, 61, 61)
-                        .addComponent(lblTiempoRadix))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(53, 53, 53)
-                            .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(68, 68, 68)
-                            .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(53, 53, 53)
-                            .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnLimpiar))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(73, 73, 73)
+                        .addComponent(lblBurbuja)
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnOrdenarBurbuja)
+                                .addGap(12, 12, 12)
+                                .addComponent(lblQuicksort)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnOrdenarQuicksort)
+                                .addGap(27, 27, 27)
+                                .addComponent(lblShellsort)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnOrdenarShellsort)
+                                .addGap(12, 12, 12)
+                                .addComponent(lblRadix)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnOrdenarRadix))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(4, 4, 4)
+                                .addComponent(lblTiempoBurbuja)
+                                .addGap(61, 61, 61)
+                                .addComponent(lblTiempoQuicksort)
+                                .addGap(76, 76, 76)
+                                .addComponent(lblTiempoShellsort)
+                                .addGap(61, 61, 61)
+                                .addComponent(lblTiempoRadix))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtBurbuja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(txtQuicksort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(68, 68, 68)
+                                .addComponent(txtShellsort, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(txtRadix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLimpiar)))
+                .addGap(14, 14, 14))
         );
 
         pack();
@@ -225,48 +248,54 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         long tiempoTotal = fin - inicio;
         txtBurbuja.setText((tiempoTotal / 1e+9) + " segundos");
-        //mostrarArreglo(nuevoBurbuja);
+        mostrarArreglo(nuevoBurbuja);
     }//GEN-LAST:event_btnOrdenarBurbujaActionPerformed
 
     private void btnOrdenarQuicksortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarQuicksortActionPerformed
         long[] arregloQuick = arreglo;
-        
+
         long inicio = System.nanoTime();
         ordenar.Quicksort(arregloQuick);
         long fin = System.nanoTime();
-        
+
         long tiempoTotal = fin - inicio;
         txtQuicksort.setText((tiempoTotal / 1e+9) + " segundos");
-        //mostrarArreglo(arregloQuick);
+        mostrarArreglo(arregloQuick);
     }//GEN-LAST:event_btnOrdenarQuicksortActionPerformed
 
     private void btnOrdenarShellsortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarShellsortActionPerformed
         long[] arregloShell = arreglo;
-        
+
         long inicio = System.nanoTime();
         long[] nuevoShell = ordenar.Shellsort(arregloShell);
         long fin = System.nanoTime();
-        
+
         long tiempoTotal = fin - inicio;
         txtShellsort.setText((tiempoTotal / 1e+9) + " segundos");
-        //mostrarArreglo(nuevoShell);
+        mostrarArreglo(nuevoShell);
     }//GEN-LAST:event_btnOrdenarShellsortActionPerformed
 
     private void btnOrdenarRadixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarRadixActionPerformed
         long[] arregloRadix = arreglo;
-        
+
         long inicio = System.nanoTime();
         long[] nuevoRadix = ordenar.Radix(arregloRadix);
         long fin = System.nanoTime();
-        
+
         long tiempoTotal = fin - inicio;
         txtRadix.setText((tiempoTotal / 1e+9) + " segundos");
-        //mostrarArreglo(nuevoRadix);
+        mostrarArreglo(nuevoRadix);
     }//GEN-LAST:event_btnOrdenarRadixActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         PaneMostrar.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        Principal p = new Principal();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     public void mostrarArreglo(long[] arregloMostrar) {
         String mostrar = "";
@@ -293,20 +322,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaOrdenamiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaOrdenamiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaOrdenamiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaOrdenamiento.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaOrdenamiento().setVisible(true);
             }
         });
     }
@@ -318,6 +348,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdenarQuicksort;
     private javax.swing.JButton btnOrdenarRadix;
     private javax.swing.JButton btnOrdenarShellsort;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBurbuja;

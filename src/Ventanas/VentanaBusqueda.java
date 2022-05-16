@@ -13,7 +13,7 @@ import MetodosDeOrdenamiento.Ordenamiento;
  */
 public class VentanaBusqueda extends javax.swing.JFrame {
 
-    private long[] arreglo,busquedaBinaria;
+    private long[] arreglo, busquedaBinaria;
     private Busqueda buscar;
     private Ordenamiento ordenar;
     private boolean ordenado;
@@ -32,6 +32,9 @@ public class VentanaBusqueda extends javax.swing.JFrame {
         }
         initComponents();
         mostrarArreglo(arreglo);
+        this.setTitle("Ventana busqueda");
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -59,6 +62,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
         lblBinaria = new javax.swing.JLabel();
         bntBusquedaBinaria = new javax.swing.JButton();
         lblNumBin = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,40 +98,52 @@ public class VentanaBusqueda extends javax.swing.JFrame {
 
         lblNumBin.setText("Numero busqueda");
 
+        btnVolver.setText("Voler");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSecuencial)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNumSec)
-                            .addComponent(lblTimepoSec))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblSecuencial)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtNumSec, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(btnBusquedaSecuencial))
-                            .addComponent(txtTiempoSecuencial)))
-                    .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblBinaria)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNumSec)
+                                    .addComponent(lblTimepoSec))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtNumSec, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(56, 56, 56)
+                                        .addComponent(btnBusquedaSecuencial))
+                                    .addComponent(txtTiempoSecuencial, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblBinaria)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblNumBin)
+                                    .addComponent(lblTiempoBin))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(txtNumBin, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(56, 56, 56)
+                                        .addComponent(bntBusquedaBinaria))
+                                    .addComponent(txtTiempoBin, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblResultadoBin, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNumBin)
-                            .addComponent(lblTiempoBin))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtNumBin, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(56, 56, 56)
-                                .addComponent(bntBusquedaBinaria))
-                            .addComponent(txtTiempoBin, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblResultadoBin, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(btnVolver)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48))
         );
@@ -136,7 +152,12 @@ public class VentanaBusqueda extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(32, 32, 32)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVolver)
+                        .addGap(33, 33, 33)
                         .addComponent(lblSecuencial)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -163,10 +184,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
                                 .addComponent(lblTiempoBin)
                                 .addGap(18, 18, 18)
                                 .addComponent(lblResultadoBin))
-                            .addComponent(txtTiempoBin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtTiempoBin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
 
@@ -181,17 +199,17 @@ public class VentanaBusqueda extends javax.swing.JFrame {
         long fin = System.nanoTime();
 
         long tiempoTotal = fin - inicio;
-        double tiempo = (tiempoTotal / 1000000000) ;
-        txtTiempoSecuencial.setText(tiempo+ " segundos");
+        double tiempo = (tiempoTotal / 1000000000);
+        txtTiempoSecuencial.setText(tiempo + " segundos");
         if (encontrado) {
-            lblResultado.setText("Valor encontrado en la posicion "+buscar.pos);
+            lblResultado.setText("Valor encontrado en la posicion " + buscar.pos);
         } else {
             lblResultado.setText("Valor no encontrado en el arreglo");
         }
     }//GEN-LAST:event_btnBusquedaSecuencialActionPerformed
 
     private void bntBusquedaBinariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntBusquedaBinariaActionPerformed
-        if(!ordenado){
+        if (!ordenado) {
             busquedaBinaria = ordenar.Shellsort(arreglo);
             mostrarArreglo(busquedaBinaria);
             ordenado = true;
@@ -203,14 +221,20 @@ public class VentanaBusqueda extends javax.swing.JFrame {
         long fin = System.nanoTime();
 
         long tiempoTotal = fin - inicio;
-        double tiempo = (tiempoTotal / 1000000000);
-        txtTiempoBin.setText( tiempo + " segundos");
+        double tiempo = (tiempoTotal / 1e-9);
+        txtTiempoBin.setText(tiempo + " segundos");
         if (encontrado) {
-            lblResultadoBin.setText("Valor encontrado en la posicion "+buscar.pos);
+            lblResultadoBin.setText("Valor encontrado en la posicion " + buscar.pos);
         } else {
             lblResultadoBin.setText("Valor no encontrado en el arreglo");
         }
     }//GEN-LAST:event_bntBusquedaBinariaActionPerformed
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        Principal p = new Principal();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     public void mostrarArreglo(long[] arregloMostrar) {
         String mostrar = "";
@@ -259,6 +283,7 @@ public class VentanaBusqueda extends javax.swing.JFrame {
     private javax.swing.JTextPane PaneArreglo;
     private javax.swing.JButton bntBusquedaBinaria;
     private javax.swing.JButton btnBusquedaSecuencial;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBinaria;
     private javax.swing.JLabel lblNumBin;
